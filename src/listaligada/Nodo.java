@@ -7,22 +7,23 @@ package listaligada;
 /**
  *
  * @author alexa
+ * @param <T>
  */
-public class Nodo {
+public class Nodo<T> {
 
-    private int dato;//dato almacenado
+    private T dato;//dato almacenado
     private Nodo siguiente;//apuntador al siguiente nodo
 
-    public Nodo(int d) {
+    public Nodo(T d) {
         this.dato = d;
         this.siguiente = null;
     }
 
-    public int getDato() {
+    public T getDato() {
         return dato;
     }
 
-    public void setDato(int dato) {
+    public void setDato(T dato) {
         this.dato = dato;
     }
 

@@ -8,7 +8,7 @@ package listaligada;
  *
  * @author alexa
  */
-public class Lista {
+public class Lista<T> {
 
     private Nodo head;//Apuntador a la cabecera de la lista (primer nodo)
     private Nodo tail;//Apuntador a la cola de la lista (ultimo nodo)
@@ -30,7 +30,7 @@ public class Lista {
         this.size++;
     }
      */
-    public void add(int dato) {
+    public void add(T dato) {
         Nodo nuevoNodo = new Nodo(dato);
         this.size++;
         tail = nuevoNodo;//Se mueve el apuntador al ultimo nodo
@@ -44,7 +44,7 @@ public class Lista {
 
     }
     
-    public void add(int dato, int posicion){
+    public void add(T dato, int posicion){
         Nodo nuevoNodo = new Nodo(dato);
         int i = 1;
         actual = head;
@@ -64,7 +64,7 @@ public class Lista {
         int posicion = 1;
         actual = head;
         while (actual != null) {
-            int elemento = actual.getDato();
+            T elemento = (T) actual.getDato();
             System.out.println("Dato = " + elemento + " almacenado en nodo: " + posicion);
             actual = actual.getSiguiente();
             posicion++;
